@@ -12,20 +12,48 @@
 // Find the unique string
 // Find The Unique
 
-function findUniqueNumber(array) {
-    let num = array[0];
+// function findUniqueNumber(array) {
+//     let num = array[0];
 
-    for (let i = 0; i < array.length; i++) {
-        console.log(array[i]);
-        if (num = array[i]) {
-            continue;
-        } else {
-            num = array[i];
-            return;
-        }
-    }
-    console.log(array[i]);
-    return num;
-};
+//     for (let i = 0; i < array.length; i++) {
+//         console.log(array[i]);
+//         if (num = array[i]) {
+//             continue;
+//         } else {
+//             num = array[i];
+//             console.log(num);
+//             return;
+//         }
+//     }
+//     return num;
+// };
+
+// function findUniqueNumber(array) {
+//     let num;
+//     let i = 0;
+
+//     do {
+//         num = array[i];
+//         i++
+//     } while (num = array[i])
+//     console.log(num);
+//     return num;
+// }
+
+// function findUniqueNumber(array) {
+//     let uniqueNumber = array.filter((item, i, ar) => ar.indexOf(item) === i);
+//     console.log(uniqueNumber);
+// }
+
+
+//uses .find method to "loop" through each element in the given array.
+//once an element is found that satisfies the requirements specified, uniquenumber is assigned that value and the method exits out.
+//here, if the first index is not equal to the second index in each separate log, that is when the function would exit and return the first num that is "special";
+
+function findUniqueNumber(array) {
+    const uniqueNumber = array.find(v => array[0] != array[1] ? v != array[2] : v != array[0]);
+    console.log(uniqueNumber);
+    return uniqueNumber
+}
 
 findUniqueNumber([1, 1, 1, 99, 1, 1]);
