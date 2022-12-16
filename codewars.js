@@ -59,11 +59,36 @@
 // findUniqueNumber([1, 1, 1, 99, 1, 1]);
 
 
-function findSmallestInt(args) {
-    const minimumInteger = Math.min(...args);
-    console.log(minimumInteger);
-    return minimumInteger;
+// function findSmallestInt(args) {
+//     const minimumInteger = Math.min(...args);
+//     console.log(minimumInteger);
+//     return minimumInteger;
+// }
+
+
+// findSmallestInt([8, 99, 1, -3, 7])
+
+function countSheep(arrayOfSheep) {
+    let present = true;
+    let notPresent = false;
+    let count = 0;
+    for (let i = 0; i < arrayOfSheep.length; i++) {
+        if (present === arrayOfSheep[i]) {
+            count++;
+            console.log(count);
+        } else if (notPresent === arrayOfSheep[i]) {
+            count = count + 0;
+        } else if (arrayOfSheep[i] != true && arrayOfSheep[i] != false) {
+            console.log(NaN);
+        }
+        console.log(count)
+        return count;
+    }
 }
 
-
-findSmallestInt([8, 99, 1, -3, 7])
+countSheep([true, true, true, false,
+    true, true, true, true,
+    true, false, true, false,
+    true, false, false, true,
+    true, true, true, true,
+    false, false, true, true])
