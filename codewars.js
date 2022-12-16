@@ -50,10 +50,20 @@
 //once an element is found that satisfies the requirements specified, uniquenumber is assigned that value and the method exits out.
 //here, if the first index is not equal to the second index in each separate log, that is when the function would exit and return the first num that is "special";
 
-function findUniqueNumber(array) {
-    const uniqueNumber = array.find(v => array[0] != array[1] ? v != array[2] : v != array[0]);
-    console.log(uniqueNumber);
-    return uniqueNumber
+// function findUniqueNumber(array) {
+//     const uniqueNumber = array.find(v => array[0] != array[1] ? v != array[2] : v != array[0]);
+//     console.log(uniqueNumber);
+//     return uniqueNumber
+// }
+
+// findUniqueNumber([1, 1, 1, 99, 1, 1]);
+
+
+function findSmallestInt(args) {
+    const minimumInteger = Math.min(...args);
+    console.log(minimumInteger);
+    return minimumInteger;
 }
 
-findUniqueNumber([1, 1, 1, 99, 1, 1]);
+
+findSmallestInt([8, 99, 1, -3, 7])
