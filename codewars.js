@@ -68,25 +68,44 @@
 
 // findSmallestInt([8, 99, 1, -3, 7])
 
-function countSheep(arrayOfSheep) {
-    let count = 0;
-    for (let i = 0; i < arrayOfSheep.length; i++) {
-        if (arrayOfSheep[i] == true) {
-            count = count + 1;
-            console.log(count);
-        } else if (arrayOfSheep == false) {
-            count = count + 0;
-        } else if (arrayOfSheep[i] != true && arrayOfSheep[i] != false) {
-            console.log(NaN);
-        }
+// function countSheep(arrayOfSheep) {
+//     let count = 0;
+//     for (let i = 0; i < arrayOfSheep.length; i++) {
+//         if (arrayOfSheep[i] == true) {
+//             count = count + 1;
+//             console.log(count);
+//         } else if (arrayOfSheep == false) {
+//             count = count + 0;
+//         } else if (arrayOfSheep[i] != true && arrayOfSheep[i] != false) {
+//             console.log(NaN);
+//         }
+//     }
+//     console.log(count)
+//     return count;
+// }
+
+// countSheep([true, true, true, false,
+//     true, true, true, true,
+//     true, false, true, false,
+//     true, false, false, true,
+//     true, true, true, true,
+//     false, false, true, true])
+
+function oddOrEven(array) {
+    const sumOfArr = array.reduce((acc, a) => acc + a, 0);
+    console.log(sumOfArr);
+    let remainder = sumOfArr % 2;
+
+    if (sumOfArr === 0) {
+        console.log('even');
+        return 'even';
+    } else if (sumOfArr % 2 === 0) {
+        console.log('even');
+        return 'even';
+    } else {
+        console.log('odd');
+        return 'odd';
     }
-    console.log(count)
-    return count;
 }
 
-countSheep([true, true, true, false,
-    true, true, true, true,
-    true, false, true, false,
-    true, false, false, true,
-    true, true, true, true,
-    false, false, true, true])
+oddOrEven([0, 5, 9])
