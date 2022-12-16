@@ -69,21 +69,19 @@
 // findSmallestInt([8, 99, 1, -3, 7])
 
 function countSheep(arrayOfSheep) {
-    let present = true;
-    let notPresent = false;
     let count = 0;
     for (let i = 0; i < arrayOfSheep.length; i++) {
-        if (present === arrayOfSheep[i]) {
-            count++;
+        if (arrayOfSheep[i] == true) {
+            count = count + 1;
             console.log(count);
-        } else if (notPresent === arrayOfSheep[i]) {
+        } else if (arrayOfSheep == false) {
             count = count + 0;
         } else if (arrayOfSheep[i] != true && arrayOfSheep[i] != false) {
             console.log(NaN);
         }
-        console.log(count)
-        return count;
     }
+    console.log(count)
+    return count;
 }
 
 countSheep([true, true, true, false,
