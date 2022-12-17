@@ -119,3 +119,9 @@
 //     return employed && !vacation ? true : false;
 // }
 
+// function updateLight(current) {
+//     if (current == 'red') {
+//       return 'green';
+//     }
+//       return current == 'green' ? 'yellow' : 'red';
+//   };
