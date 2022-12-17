@@ -110,7 +110,12 @@
 
 // oddOrEven([0, 5, 9])
 
-function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
-    let total = laLigaGoals + copaDelReyGoals + championsLeagueGoals;
-    return total;
-}
+// function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+//     let total = laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+//     return total;
+// }
+
+// function setAlarm(employed, vacation) {
+//     return employed && !vacation ? true : false;
+// }
+
