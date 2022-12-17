@@ -91,21 +91,26 @@
 //     true, true, true, true,
 //     false, false, true, true])
 
-function oddOrEven(array) {
-    const sumOfArr = array.reduce((acc, a) => acc + a, 0);
-    console.log(sumOfArr);
-    let remainder = sumOfArr % 2;
+// function oddOrEven(array) {
+//     const sumOfArr = array.reduce((acc, a) => acc + a, 0);
+//     console.log(sumOfArr);
+//     let remainder = sumOfArr % 2;
 
-    if (sumOfArr === 0) {
-        console.log('even');
-        return 'even';
-    } else if (sumOfArr % 2 === 0) {
-        console.log('even');
-        return 'even';
-    } else {
-        console.log('odd');
-        return 'odd';
-    }
+//     if (sumOfArr === 0) {
+//         console.log('even');
+//         return 'even';
+//     } else if (sumOfArr % 2 === 0) {
+//         console.log('even');
+//         return 'even';
+//     } else {
+//         console.log('odd');
+//         return 'odd';
+//     }
+// }
+
+// oddOrEven([0, 5, 9])
+
+function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+    let total = laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+    return total;
 }
-
-oddOrEven([0, 5, 9])
