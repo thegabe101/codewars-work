@@ -125,3 +125,14 @@
 //     }
 //       return current == 'green' ? 'yellow' : 'red';
 //   };
+
+function DNAStrand(dna){
+    let dnaString = dna.toString();
+    console.log(dnaString);
+    
+    if (dnaString.includes('A') === true) {
+      dnaString = dnaString.replaceAll('A', 'T');
+      console.log(dnaString);
+      return dnaString;
+    }
+  }
