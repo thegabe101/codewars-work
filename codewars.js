@@ -126,13 +126,34 @@
 //       return current == 'green' ? 'yellow' : 'red';
 //   };
 
-function DNAStrand(dna){
+function DNAStrand(dna) {
     let dnaString = dna.toString();
     console.log(dnaString);
-    
-    if (dnaString.includes('A') === true) {
-      dnaString = dnaString.replaceAll('A', 'T');
-      console.log(dnaString);
-      return dnaString;
-    }
-  }
+    let i = 0;
+
+    do {
+        i = i + 1;
+        if (dnaString[i] === 'A') {
+            dnaString = dnaString.replaceAll('A', 'T');
+        } else if (dnaString[i] === 'T') {
+            dnaString = dnaString.replaceAll('T', 'A');
+        }
+        // dnaString = dnaString.replaceAll('T', 'A');
+        // dnaString = dnaString.replaceAll('C', 'G');
+        // dnaString = dnaString.replaceAll('G', 'C')
+    } while (i < dnaString.length);
+
+    console.log(dnaString);
+
+
+    // if (dnaString.includes('A') === true) {
+    //     dnaString = dnaString.replaceAll('A', 'T');
+    //     console.log(dnaString);
+    //     return dnaString;
+    // }
+    //     else if (dnaString.includes('T') === true) {
+    //     dnaString = dnaString.replaceA
+    // }
+}
+
+DNAStrand('AAAA');
