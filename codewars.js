@@ -178,9 +178,9 @@ function duplicateEncode(word) {
         } else if (valueArray[i] > 1) {
             returnString = returnString + ')';
         }
-        console.log(returnString);
-        return returnString;
     }
+    console.log(returnString);
+    return returnString;
 }
 
 duplicateEncode('hello');
