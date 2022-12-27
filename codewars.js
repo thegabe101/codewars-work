@@ -173,14 +173,35 @@ function duplicateEncode(word) {
     let returnString = '';
 
     for (let i = 0; i < valueArray.length; i++) {
+        console.log(valueArray)
         if (valueArray[i] <= 1) {
+            console.log(returnString)
             returnString = returnString + '(';
         } else if (valueArray[i] > 1) {
-            returnString = returnString + ')';
+            let valueGreater = valueArray[i];
+            console.log(returnString);
+            for (let j = 0; j < valueGreater; j++) {
+                returnString = returnString + ')';
+            }
         }
     }
     console.log(returnString);
     return returnString;
+
+
+
+    // for (let i = 0; i < valueArray.length; i++) {
+    //     if (valueArray[i] <= 1) {
+    //         returnString = returnString + '(';
+    //     } else if (valueArray[i] > 1) {
+    //         returnString = returnString + ')';
+    //     }
+    // }
+    // console.log(returnString);
+    // return returnString;
 }
+
+
+//'hello' should equal '(())('
 
 duplicateEncode('hello');
