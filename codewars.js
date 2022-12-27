@@ -126,34 +126,47 @@
 //       return current == 'green' ? 'yellow' : 'red';
 //   };
 
-function DNAStrand(dna) {
-    let dnaString = dna.toString();
-    console.log(dnaString);
-    let i = 0;
+// function DNAStrand(dna) {
+//     let dnaString = dna.toString();
+//     console.log(dnaString);
+//     let i = 0;
 
-    do {
-        i = i + 1;
-        if (dnaString[i] === 'A') {
-            dnaString = dnaString.replaceAll('A', 'T');
-        } else if (dnaString[i] === 'T') {
-            dnaString = dnaString.replaceAll('T', 'A');
-        }
-        // dnaString = dnaString.replaceAll('T', 'A');
-        // dnaString = dnaString.replaceAll('C', 'G');
-        // dnaString = dnaString.replaceAll('G', 'C')
-    } while (i < dnaString.length);
+//     do {
+//         i = i + 1;
+//         if (dnaString[i] === 'A') {
+//             dnaString = dnaString.replaceAll('A', 'T');
+//         } else if (dnaString[i] === 'T') {
+//             dnaString = dnaString.replaceAll('T', 'A');
+//         }
+//         // dnaString = dnaString.replaceAll('T', 'A');
+//         // dnaString = dnaString.replaceAll('C', 'G');
+//         // dnaString = dnaString.replaceAll('G', 'C')
+//     } while (i < dnaString.length);
 
-    console.log(dnaString);
+//     console.log(dnaString);
 
 
-    // if (dnaString.includes('A') === true) {
-    //     dnaString = dnaString.replaceAll('A', 'T');
-    //     console.log(dnaString);
-    //     return dnaString;
-    // }
-    //     else if (dnaString.includes('T') === true) {
-    //     dnaString = dnaString.replaceA
-    // }
+//     // if (dnaString.includes('A') === true) {
+//     //     dnaString = dnaString.replaceAll('A', 'T');
+//     //     console.log(dnaString);
+//     //     return dnaString;
+//     // }
+//     //     else if (dnaString.includes('T') === true) {
+//     //     dnaString = dnaString.replaceA
+//     // }
+// }
+
+
+// DNAStrand('AAAA');
+
+function duplicateEncode(word) {
+    ogArray = word.split('')
+    let spreadArray = [...word];
+    console.log(ogArray);
+    console.log(word.split(''));
+    console.log(ogArray.reduce((acc, letter) => word[0] == word[1] ? acc : acc += letter));
+    let result = spreadArray.reduce((a, e) => { a[e] = a[e] ? a[e] + 1 : 1; return a }, {});
+    console.log(result);
 }
 
-DNAStrand('AAAA');
+duplicateEncode('hello');
