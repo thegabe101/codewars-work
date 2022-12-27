@@ -167,6 +167,20 @@ function duplicateEncode(word) {
     console.log(ogArray.reduce((acc, letter) => word[0] == word[1] ? acc : acc += letter));
     let result = spreadArray.reduce((a, e) => { a[e] = a[e] ? a[e] + 1 : 1; return a }, {});
     console.log(result);
+    console.log(Object.values(result));
+    const valueArray = Object.values(result);
+
+    let returnString = '';
+
+    for (let i = 0; i < valueArray.length; i++) {
+        if (valueArray[i] <= 1) {
+            returnString = returnString + '(';
+        } else if (valueArray[i] > 1) {
+            returnString = returnString + ')';
+        }
+        console.log(returnString);
+        return returnString;
+    }
 }
 
 duplicateEncode('hello');
