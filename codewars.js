@@ -159,49 +159,87 @@
 
 // DNAStrand('AAAA');
 
-function duplicateEncode(word) {
-    ogArray = word.split('')
-    let spreadArray = [...word];
-    console.log(ogArray);
-    console.log(word.split(''));
-    console.log(ogArray.reduce((acc, letter) => word[0] == word[1] ? acc : acc += letter));
-    let result = spreadArray.reduce((a, e) => { a[e] = a[e] ? a[e] + 1 : 1; return a }, {});
-    console.log(result);
-    console.log(Object.values(result));
-    const valueArray = Object.values(result);
 
-    let returnString = '';
-
-    for (let i = 0; i < valueArray.length; i++) {
-        console.log(valueArray)
-        if (valueArray[i] <= 1) {
-            console.log(returnString)
-            returnString = returnString + '(';
-        } else if (valueArray[i] > 1) {
-            let valueGreater = valueArray[i];
-            console.log(returnString);
-            for (let j = 0; j < valueGreater; j++) {
-                returnString = returnString + ')';
-            }
-        }
-    }
-    console.log(returnString);
-    return returnString;
+// GROCERY LIST: cucumber, cherry tomato, red onion, dill, cream cheese, coffee, half and half, DINNER GOODS, bagels, fruit, 
 
 
+// function duplicateEncode(word) {
+//     ogArray = word.split('')
+//     let spreadArray = [...word];
+//     console.log(ogArray);
+//     console.log(word.split(''));
+//     console.log(ogArray.reduce((acc, letter) => word[0] == word[1] ? acc : acc += letter));
+//     let result = spreadArray.reduce((a, e) => { a[e] = a[e] ? a[e] + 1 : 1; return a }, {});
+//     console.log(result);
+//     console.log(Object.values(result));
+//     const valueArray = Object.values(result);
+//     console.log(valueArray);
+//     let returnString = '';
 
-    // for (let i = 0; i < valueArray.length; i++) {
-    //     if (valueArray[i] <= 1) {
-    //         returnString = returnString + '(';
-    //     } else if (valueArray[i] > 1) {
-    //         returnString = returnString + ')';
-    //     }
-    // }
-    // console.log(returnString);
-    // return returnString;
+//     for (let i = 0; i < valueArray.length; i++) {
+//         console.log(valueArray)
+//         if (valueArray[i] <= 1) {
+//             console.log(returnString)
+//             returnString = returnString + '(';
+//         } else if (valueArray[i] > 1) {
+//             let valueGreater = valueArray[i];
+//             console.log(returnString);
+//             for (let j = 0; j < valueGreater; j++) {
+//                 returnString = returnString + ')';
+//             }
+//         }
+//     }
+//     console.log(returnString);
+//     return returnString;
+// }
+
+// // valueArray.forEach(function (part, index) {
+// //     if (this[index] <= 1) {
+// //         this[index] = '('
+// //     } else if (this[index] > 1) {
+// //         this[index] = ')';
+// //     }
+// //     console.log(valueArray.join(''));
+// // }, valueArray)
+
+// // return valueArray.join('');
+
+
+// //     for (let i = 0; i < valueArray.length; i++) {
+// //         if (valueArray[i] <= 1) {
+// //             returnString = returnString + '(';
+// //         } else if (valueArray[i] > 1) {
+// //             returnString = returnString + ')';
+// //         }
+// //     }
+// //     console.log(returnString);
+// //     return returnString;
+// // }
+
+
+// // 'hello' should equal '(())('
+
+// duplicateEncode('din');
+
+
+function sumTwoSmallestNumbers(numbers) {
+    const arrayNums = numbers.sort((a, b) => a - b).slice(0, 2);
+    console.log(arrayNums);
+
+    let sum = 0;
+
+    sum = arrayNums[0] + arrayNums[1];
+    console.log(sum);
+
+    return sum;
 }
 
+sumTwoSmallestNumbers([1, 4, 9, 99, 105])
 
-//'hello' should equal '(())('
+// function sumTwoSmallestNumbers(numbers) {
+//     const sortedNum = numbers.sort();
+//     console.log(sortedNum);
+//     return sortedNum;
+// }
 
-duplicateEncode('hello');
+// sumTwoSmallestNumbers([1, 4, 9, 99, 105]);
