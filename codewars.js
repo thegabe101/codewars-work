@@ -160,7 +160,7 @@
 // DNAStrand('AAAA');
 
 
-// GROCERY LIST: cucumber, cherry tomato, red onion, dill, cream cheese, coffee, half and half, DINNER GOODS, bagels, fruit, 
+// GROCERY LIST: cucumber, cherry tomato, red onion, dill, cream cheese, coffee, half and half, DINNER GOODS, bagels, fruit,
 
 
 // function duplicateEncode(word) {
@@ -222,19 +222,19 @@
 // duplicateEncode('din');
 
 
-function sumTwoSmallestNumbers(numbers) {
-    const arrayNums = numbers.sort((a, b) => a - b).slice(0, 2);
-    console.log(arrayNums);
+// function sumTwoSmallestNumbers(numbers) {
+//     const arrayNums = numbers.sort((a, b) => a - b).slice(0, 2);
+//     console.log(arrayNums);
 
-    let sum = 0;
+//     let sum = 0;
 
-    sum = arrayNums[0] + arrayNums[1];
-    console.log(sum);
+//     sum = arrayNums[0] + arrayNums[1];
+//     console.log(sum);
 
-    return sum;
-}
+//     return sum;
+// }
 
-sumTwoSmallestNumbers([1, 4, 9, 99, 105])
+// sumTwoSmallestNumbers([1, 4, 9, 99, 105])
 
 // function sumTwoSmallestNumbers(numbers) {
 //     const sortedNum = numbers.sort();
@@ -243,3 +243,26 @@ sumTwoSmallestNumbers([1, 4, 9, 99, 105])
 // }
 
 // sumTwoSmallestNumbers([1, 4, 9, 99, 105]);
+
+
+// function gooseFunction(birds) {
+//     let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+
+//     for (let i = 0; i < birds.length; i++) {
+//         if (birds[i] === geese[i]) {
+//             birds[i].slice[i, 1];
+//         }
+//         console.log(birds);
+//     }
+// }
+
+function gooseFunction(birds) {
+    let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+
+    const filteredBirds = birds.filter((bird) => !geese.includes(bird));
+
+    console.log(filteredBirds)
+}
+
+
+gooseFunction(['Pilgrim', 'Cockatoo', 'Quail', 'Bluebird', 'Toulouse', 'Loon', 'Robin']);
