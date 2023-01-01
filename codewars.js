@@ -1,5 +1,7 @@
 // There is an array with some numbers. All numbers are equal except for one. Try to find it!
 
+// const e = require("express");
+
 // findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
 // findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
 // It’s guaranteed that array contains at least 3 numbers.
@@ -267,27 +269,50 @@
 
 // gooseFunction(['Pilgrim', 'Cockatoo', 'Quail', 'Bluebird', 'Toulouse', 'Loon', 'Robin']);
 
-function alphabetPosition(text) {
-    // const alphabetLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    // const singleLetter = alphabetLetter.map((letter => letter))
-    // // console.log(singleLetter);
+// function alphabetPosition(text) {
+//     // const alphabetLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//     // const singleLetter = alphabetLetter.map((letter => letter))
+//     // // console.log(singleLetter);
 
-    // for (let i = 0; i < text.length; i++)
-    //     if (text.includes(alphabetLetter[i])) {
-    //         console.log(i + 1);
-    //         // console.log(alphabetLetter[i]);
-    //     }
+//     // for (let i = 0; i < text.length; i++)
+//     //     if (text.includes(alphabetLetter[i])) {
+//     //         console.log(i + 1);
+//     //         // console.log(alphabetLetter[i]);
+//     //     }
 
-    // // console.log(text.split(''));
+//     // // console.log(text.split(''));
 
-    let stringResult = '';
-    for (let i = 0; i < text.length; i++) {
-        let code = text.toUpperCase().charCodeAt(i)
-        if (code > 64 && code < 91) stringResult += (code - 64) + " ";
-        console.log(stringResult);
+//     let stringResult = '';
+//     for (let i = 0; i < text.length; i++) {
+//         let code = text.toUpperCase().charCodeAt(i)
+//         if (code > 64 && code < 91) stringResult += (code - 64) + " ";
+//         console.log(stringResult);
+//     }
+//     return stringResult.slice(0, stringResult.length - 1);
+// }
+
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+function removeSmallest(numbers) {
+    const lowestRating = Math.min(...numbers);
+    const lowestRatingIndex = numbers.indexOf(lowestRating);
+
+    let arr = [];
+
+    function filter() {
+        numbers.filter(e => {
+            if (e > lowestRating) {
+                arr.push(e);
+            }
+
+        })
     }
-    return stringResult.slice(0, stringResult.length - 1);
+
+    filter();
+    console.log(arr);
+    console.log(lowestRating);
+    console.log(lowestRatingIndex)
+    return arr;
 }
 
-console.log(alphabetPosition("The sunset sets at twelve o' clock."));
-
+removeSmallest([1, 2, 3, 4, 5]);
