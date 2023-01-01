@@ -268,16 +268,26 @@
 // gooseFunction(['Pilgrim', 'Cockatoo', 'Quail', 'Bluebird', 'Toulouse', 'Loon', 'Robin']);
 
 function alphabetPosition(text) {
-    const alphabetLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    const singleLetter = alphabetLetter.map((letter => letter))
-    console.log(singleLetter);
+    // const alphabetLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    // const singleLetter = alphabetLetter.map((letter => letter))
+    // // console.log(singleLetter);
 
-    for (let i = 0; i < text.length; i++)
-        if (text.includes(alphabetLetter[i])) {
-            console.log('yes');
-        } else (console.log('no'));
+    // for (let i = 0; i < text.length; i++)
+    //     if (text.includes(alphabetLetter[i])) {
+    //         console.log(i + 1);
+    //         // console.log(alphabetLetter[i]);
+    //     }
 
-    console.log(text.split(''));
+    // // console.log(text.split(''));
+
+    let stringResult = '';
+    for (let i = 0; i < text.length; i++) {
+        let code = text.toUpperCase().charCodeAt(i)
+        if (code > 64 && code < 91) stringResult += (code - 64) + " ";
+        console.log(stringResult);
+    }
+    return stringResult.slice(0, stringResult.length - 1);
 }
 
-alphabetPosition("The sunset sets at twelve o' clock.");
+console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
