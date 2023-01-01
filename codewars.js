@@ -256,13 +256,28 @@
 //     }
 // }
 
-function gooseFunction(birds) {
-    let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+// function gooseFunction(birds) {
+//     let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
 
-    const filteredBirds = birds.filter((bird) => !geese.includes(bird));
+//     const filteredBirds = birds.filter((bird) => !geese.includes(bird));
 
-    console.log(filteredBirds)
+//     console.log(filteredBirds)
+// }
+
+
+// gooseFunction(['Pilgrim', 'Cockatoo', 'Quail', 'Bluebird', 'Toulouse', 'Loon', 'Robin']);
+
+function alphabetPosition(text) {
+    const alphabetLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    const singleLetter = alphabetLetter.map((letter => letter))
+    console.log(singleLetter);
+
+    for (let i = 0; i < text.length; i++)
+        if (text.includes(alphabetLetter[i])) {
+            console.log('yes');
+        } else (console.log('no'));
+
+    console.log(text.split(''));
 }
 
-
-gooseFunction(['Pilgrim', 'Cockatoo', 'Quail', 'Bluebird', 'Toulouse', 'Loon', 'Robin']);
+alphabetPosition("The sunset sets at twelve o' clock.");
