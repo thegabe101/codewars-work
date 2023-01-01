@@ -296,6 +296,10 @@
 function removeSmallest(numbers) {
     const lowestRating = Math.min(...numbers);
     const lowestRatingIndex = numbers.indexOf(lowestRating);
+    const toFindDuplicates = numbers => numbers.filter((item, index) => numbers.indexOf(item) !== index);
+    const duplicateElements = toFindDuplicates(numbers);
+
+    console.log(duplicateElements);
 
     let arr = [];
 
@@ -303,16 +307,24 @@ function removeSmallest(numbers) {
         numbers.filter(e => {
             if (e > lowestRating) {
                 arr.push(e);
+            } else {
+                for (let i = 0; i < duplicateElements.length; i++) {
+                    if (duplicateElements[i] === lowestRating) {
+                        arr.slice(duplicateElements[i]);
+                    }
+                }
             }
-
         })
     }
 
+    // const result = numbers.sort().filter((_, i) => i).reverse();
+
     filter();
     console.log(arr);
-    console.log(lowestRating);
-    console.log(lowestRatingIndex)
     return arr;
+
+
+
 }
 
-removeSmallest([1, 2, 3, 4, 5]);
+removeSmallest([2, 2, 1, 2, 1]);
