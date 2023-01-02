@@ -291,40 +291,48 @@
 //     return stringResult.slice(0, stringResult.length - 1);
 // }
 
-// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+// // console.log(alphabetPosition("The sunset sets at twelve o' clock."));
 
-function removeSmallest(numbers) {
-    const lowestRating = Math.min(...numbers);
-    const lowestRatingIndex = numbers.indexOf(lowestRating);
-    const toFindDuplicates = numbers => numbers.filter((item, index) => numbers.indexOf(item) !== index);
-    const duplicateElements = toFindDuplicates(numbers);
+// function removeSmallest(numbers) {
+//     const lowestRating = Math.min(...numbers);
+//     const lowestRatingIndex = numbers.indexOf(lowestRating);
+//     const toFindDuplicates = numbers => numbers.filter((item, index) => numbers.indexOf(item) !== index);
+//     const duplicateElements = toFindDuplicates(numbers);
 
-    console.log(duplicateElements);
+//     console.log(duplicateElements);
 
-    let arr = [];
+//     let arr = [];
 
-    function filter() {
-        numbers.filter(e => {
-            if (e > lowestRating) {
-                arr.push(e);
-            } else {
-                for (let i = 0; i < duplicateElements.length; i++) {
-                    if (duplicateElements[i] === lowestRating) {
-                        arr.slice(duplicateElements[i]);
-                    }
-                }
-            }
-        })
-    }
-
-    // const result = numbers.sort().filter((_, i) => i).reverse();
-
-    filter();
-    console.log(arr);
-    return arr;
+//     function filter() {
+//         numbers.filter(e => {
+//             if (e > lowestRating) {
+//                 arr.push(e);
+//             } else {
+//                 for (let i = 0; i < duplicateElements.length; i++) {
+//                     if (duplicateElements[i] === lowestRating) {
+//                         arr = numbers.sort().filter((_, i) => i).reverse();
+//                         console.log(arr);
+//                         return arr;
+//                     }
+//                 }
+//             }
+//         })
+//     }
 
 
 
+//     filter();
+//     // console.log(arr);
+//     // return arr;
+// }
+
+// removeSmallest([2, 2, 1, 2, 1]);
+
+function index(array, n) {
+    let ourIndex = array[n];
+
+    if (our return Math.pow(ourIndex, n);
 }
 
-removeSmallest([2, 2, 1, 2, 1]);
+
+index([1, 2, 3, 4], 2);
