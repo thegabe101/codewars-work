@@ -328,11 +328,15 @@
 
 // removeSmallest([2, 2, 1, 2, 1]);
 
-function index(array, n) {
-    let ourIndex = array[n];
+// function index(array, n) {
+//     let ourIndex = array[n];
 
-    if (our return Math.pow(ourIndex, n);
-}
+//     if (our return Math.pow(ourIndex, n);
+// }
 
 
-index([1, 2, 3, 4], 2);
+// index([1, 2, 3, 4], 2);
+
+function square(num) {
+    return Math.pow(num, 2);
+  }
