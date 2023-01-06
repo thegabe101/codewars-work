@@ -341,15 +341,28 @@
 //     return Math.pow(num, 2);
 //   }
 
-function count(string) {
-    //take in the string argument and spread it
-    //use the reduce method, passing and initial value of empty object {}, a previous value of a, and a current value of e
-    //use callback function to check, for each value in the spread array, if that value is equal to the current value being checked. if so, incrememnt that value 
-    //return current value at the end of the function for a full count of occurrence of each char within a string 
-    let stringCount = [...string].reduce((a, e) => {
-        a[e] = a[e] ? a[e] + 1 : 1; return a
-    }, {});
-    console.log(stringCount)
+// function count(string) {
+//     //take in the string argument and spread it
+//     //use the reduce method, passing and initial value of empty object {}, a previous value of a, and a current value of e
+//     //use callback function to check, for each value in the spread array, if that value is equal to the current value being checked. if so, incrememnt that value 
+//     //return current value at the end of the function for a full count of occurrence of each char within a string 
+//     let stringCount = [...string].reduce((a, e) => {
+//         a[e] = a[e] ? a[e] + 1 : 1; return a
+//     }, {});
+//     console.log(stringCount)
+// }
+
+// count('abaddt');
+
+function friend(friends) {
+    let myFriends = [];
+    let i = 0;
+    console.log(myFriends);
+
+    while (friends[i].length === 4) {
+        myFriends.push(friends[i]);
+    }
+    console.log(myFriends);
 }
 
-count('abaddt');
+friend(["Ryan", "Kieran", "Mark"]);
