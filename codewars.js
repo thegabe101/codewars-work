@@ -359,10 +359,14 @@ function friend(friends) {
     let i = 0;
     console.log(myFriends);
 
-    while (friends[i].length === 4) {
-        myFriends.push(friends[i]);
+    for (let i = 0; i < friends.length; i++) {
+      if (friends[i].length === 4) {
+        myFriends.push(friends[i])
+      }
     }
+  
     console.log(myFriends);
+    return myFriends;
 }
 
 friend(["Ryan", "Kieran", "Mark"]);
