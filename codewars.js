@@ -354,19 +354,31 @@
 
 // count('abaddt');
 
-function friend(friends) {
-    let myFriends = [];
-    let i = 0;
-    console.log(myFriends);
+// function friend(friends) {
+//     let myFriends = [];
+//     let i = 0;
+//     console.log(myFriends);
 
-    for (let i = 0; i < friends.length; i++) {
-      if (friends[i].length === 4) {
-        myFriends.push(friends[i])
-      }
-    }
-  
-    console.log(myFriends);
-    return myFriends;
+//     for (let i = 0; i < friends.length; i++) {
+//       if (friends[i].length === 4) {
+//         myFriends.push(friends[i])
+//       }
+//     }
+
+//     console.log(myFriends);
+//     return myFriends;
+// }
+
+// friend(["Ryan", "Kieran", "Mark"]);
+
+function arr(n) {
+  let emptyArr = [];
+
+  for (let i = 0; i < n; i++) {
+    emptyArr.push(i)
+  }
+  console.log(emptyArr);
+
+  return emptyArr;
 }
 
-friend(["Ryan", "Kieran", "Mark"]);
