@@ -371,14 +371,48 @@
 
 // friend(["Ryan", "Kieran", "Mark"]);
 
-function arr(n) {
-  let emptyArr = [];
+// function arr(n) {
+//   let emptyArr = [];
 
-  for (let i = 0; i < n; i++) {
-    emptyArr.push(i)
+//   for (let i = 0; i < n; i++) {
+//     emptyArr.push(i)
+//   }
+//   console.log(emptyArr);
+
+//   return emptyArr;
+// }
+
+function findEvenIndex(arr) {
+  //escape if array is empty
+  if (arr.length == 0) {
+    return -1;
+  } else {
+    //assign the variables for the numbers to the right and left of our found index
+    let rightSide = 0;
+    let leftSide = 0;
+    //create reducer variable that will sum all numbers within the array indices chosen
+    const reducer = (acc, value) => acc + value;
+
+    for (let i = 0; i < arr.length; i++) {
+      if (i == 0) {
+        //slices every index to the right of the first number
+        //uses reduce with an initiated value of 0 to sum every number to the right of our index
+        rightSide = arr.slice(1).reduce(reducer, 0);
+        if (rightSide === i) {
+          //if check passes (sum equals the first val in the array) we return it 
+          //this is looped until we compare values of left and right that are are matched 
+          return i;
+        } else {
+          leftSide = arr.slice(0, i).reduce(reducer, 0);
+          rightSide = arr.slice(i + 1).reduce(reducer, 0);
+          //once we find a match, we return the index 
+          if (leftSide == rightSide) {
+            return i;
+          }
+        }
+        //escape hatch if function manages to hit end of loop without finding proper index
+        return -1;
+      }
+    }
   }
-  console.log(emptyArr);
-
-  return emptyArr;
 }
-
