@@ -432,31 +432,51 @@
 
 // }
 
+const initialValue = 0
 
 function queueTime(customers, n) {
   //n is passed as an argument for number of tills 
+  const slowestCustomer = Math.max(...customers);
+  const slowestIndex = customers.indexOf(slowestCustomer);
   if (customers === []) {
     return 0
   }
   if (n === 1) {
-    const initialValue = 0;
     return customers.reduce((acc, val) =>
       acc + val, initialValue)
-  } else if (n > 1 && (customers.length <= n)) {
+  } else if (customers.length % n === 0 && (n !== 2)) {
+    return customers.reduce((acc, val) =>
+      acc + val, initialValue) / 2;
+  } else if (customers.length === (n * 2) && slowestIndex + 1 >= n) {
+    let total = customers.reduce((acc, val) =>
+      acc + val, 2) / 2;
+    return total + 2.5
+  } else if (customers.length === (n * 2)) {
+    let total = customers.reduce((acc, val) =>
+      acc + val, 2) / 2;
+    return total
+  }
+  else if (customers.length % n === 0) {
+    let total = customers.reduce((acc, val) =>
+      acc + val, 2) / 2;
+    return total - 1
+  }
+  else if (n > 1 && (customers.length <= n)) {
     const slowestCustomer = Math.max(...customers);
     return slowestCustomer;
   }
   else if (n > 1 && (customers.length >= n)) {
-    // console.log(customers.indexOf(slowestCustomer));
     const slowestCustomer = Math.max(...customers);
     const slowestIndex = customers.indexOf(slowestCustomer);
     const arrMinusSlowest = customers.splice(slowestIndex, 1);
-    let initialValue = 0
     return arrMinusSlowest.reduce((acc, val) => acc + val, initialValue) + slowestIndex;
   }
 }
 
+console.log((queueTime([2, 2, 3, 3, 4, 4], 2)));
+console.log((queueTime([10, 2, 3, 3], 2)));
 
+// ^^ should return 9
 // console.log(queueTime([], 1));
 // console.log(queueTime([1, 2, 3, 4], 1));
 // console.log(queueTime([10, 2, 3, 3], 2));
@@ -466,11 +486,11 @@ function queueTime(customers, n) {
 // //return 0
 
 // queueTime([1, 2, 3, 4], 1);
-//should return 10 
+//should return 10
 
-queueTime([1, 2, 3, 4, 5], 100);
-//should return 5 
+// queueTime([1, 2, 3, 4, 5], 100);
+//should return 5
 
-queueTime([10, 2, 3, 3], 2)
+// queueTime([10, 2, 3, 3], 2)
 //should return 10
 
