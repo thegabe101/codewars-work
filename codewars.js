@@ -442,24 +442,30 @@ function queueTime(customers, n) {
     const initialValue = 0;
     return customers.reduce((acc, val) =>
       acc + val, initialValue)
-  } else if (n > 1) {
+  } else if (n > 1 && (customers.length <= n)) {
     const slowestCustomer = Math.max(...customers);
-    console.log(customers.indexOf(slowestCustomer));
+    return slowestCustomer;
+  }
+  else if (n > 1 && (customers.length >= n)) {
+    // console.log(customers.indexOf(slowestCustomer));
+    const slowestCustomer = Math.max(...customers);
     const slowestIndex = customers.indexOf(slowestCustomer);
-    if (slowestIndex <= n)
-
+    const arrMinusSlowest = customers.splice(slowestIndex, 1);
+    let initialValue = 0
+    return arrMinusSlowest.reduce((acc, val) => acc + val, initialValue) + slowestIndex;
   }
 }
+
 
 // console.log(queueTime([], 1));
 // console.log(queueTime([1, 2, 3, 4], 1));
 // console.log(queueTime([10, 2, 3, 3], 2));
 // console.log(queueTime([3, 3, 2, 10], 2));
 
-queueTime([], 1);
-//return 0
+// queueTime([], 1);
+// //return 0
 
-queueTime([1, 2, 3, 4], 1);
+// queueTime([1, 2, 3, 4], 1);
 //should return 10 
 
 queueTime([1, 2, 3, 4, 5], 100);
