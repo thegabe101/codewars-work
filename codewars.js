@@ -344,8 +344,8 @@
 // function count(string) {
 //     //take in the string argument and spread it
 //     //use the reduce method, passing and initial value of empty object {}, a previous value of a, and a current value of e
-//     //use callback function to check, for each value in the spread array, if that value is equal to the current value being checked. if so, incrememnt that value 
-//     //return current value at the end of the function for a full count of occurrence of each char within a string 
+//     //use callback function to check, for each value in the spread array, if that value is equal to the current value being checked. if so, incrememnt that value
+//     //return current value at the end of the function for a full count of occurrence of each char within a string
 //     let stringCount = [...string].reduce((a, e) => {
 //         a[e] = a[e] ? a[e] + 1 : 1; return a
 //     }, {});
@@ -382,37 +382,89 @@
 //   return emptyArr;
 // }
 
-function findEvenIndex(arr) {
-  //escape if array is empty
-  if (arr.length == 0) {
-    return -1;
-  } else {
-    //assign the variables for the numbers to the right and left of our found index
-    let rightSide = 0;
-    let leftSide = 0;
-    //create reducer variable that will sum all numbers within the array indices chosen
-    const reducer = (acc, value) => acc + value;
+// function findEvenIndex(arr) {
+//   //escape if array is empty
+//   if (arr.length == 0) {
+//     return -1;
+//   } else {
+//     //assign the variables for the numbers to the right and left of our found index
+//     let rightSide = 0;
+//     let leftSide = 0;
+//     //create reducer variable that will sum all numbers within the array indices chosen
+//     const reducer = (acc, value) => acc + value;
 
-    for (let i = 0; i < arr.length; i++) {
-      if (i == 0) {
-        //slices every index to the right of the first number
-        //uses reduce with an initiated value of 0 to sum every number to the right of our index
-        rightSide = arr.slice(1).reduce(reducer, 0);
-        if (rightSide === i) {
-          //if check passes (sum equals the first val in the array) we return it 
-          //this is looped until we compare values of left and right that are are matched 
-          return i;
-        } else {
-          leftSide = arr.slice(0, i).reduce(reducer, 0);
-          rightSide = arr.slice(i + 1).reduce(reducer, 0);
-          //once we find a match, we return the index 
-          if (leftSide == rightSide) {
-            return i;
-          }
-        }
-        //escape hatch if function manages to hit end of loop without finding proper index
-        return -1;
-      }
-    }
+//     for (let i = 0; i < arr.length; i++) {
+//       if (i == 0) {
+//         //slices every index to the right of the first number
+//         //uses reduce with an initiated value of 0 to sum every number to the right of our index
+//         rightSide = arr.slice(1).reduce(reducer, 0);
+//         if (rightSide === i) {
+//           //if check passes (sum equals the first val in the array) we return it
+//           //this is looped until we compare values of left and right that are are matched
+//           return i;
+//         } else {
+//           leftSide = arr.slice(0, i).reduce(reducer, 0);
+//           rightSide = arr.slice(i + 1).reduce(reducer, 0);
+//           //once we find a match, we return the index
+//           if (leftSide == rightSide) {
+//             return i;
+//           }
+//         }
+//         //escape hatch if function manages to hit end of loop without finding proper index
+//         return -1;
+//       }
+//     }
+//   }
+// }
+// function queueTime(customers, n) {
+//   try {
+//     if (customers = []) return 0;
+
+//     else if (n = 1) {
+
+//       const initialValue = 0;
+//       return customers.reduce((acc, val) =>
+//         acc + val, initialValue)
+//     }
+//   } catch (err) {
+//     return (err);
+//   }
+
+// }
+
+
+function queueTime(customers, n) {
+  //n is passed as an argument for number of tills 
+  if (customers === []) {
+    return 0
+  }
+  if (n === 1) {
+    const initialValue = 0;
+    return customers.reduce((acc, val) =>
+      acc + val, initialValue)
+  } else if (n > 1) {
+    const slowestCustomer = Math.max(...customers);
+    console.log(customers.indexOf(slowestCustomer));
+    const slowestIndex = customers.indexOf(slowestCustomer);
+    if (slowestIndex <= n)
+
   }
 }
+
+// console.log(queueTime([], 1));
+// console.log(queueTime([1, 2, 3, 4], 1));
+// console.log(queueTime([10, 2, 3, 3], 2));
+// console.log(queueTime([3, 3, 2, 10], 2));
+
+queueTime([], 1);
+//return 0
+
+queueTime([1, 2, 3, 4], 1);
+//should return 10 
+
+queueTime([1, 2, 3, 4, 5], 100);
+//should return 5 
+
+queueTime([10, 2, 3, 3], 2)
+//should return 10
+
